@@ -14,12 +14,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="moving"
-            app:srcCompat="@android:drawable/btn_star" />
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0px"
+            android:scrollbarStyle="insideInset">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TitleText"
+                    android:textSize="100px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Games" />
+
+                <Button
+                    android:id="@+id/snakeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:insetLeft="50dp"
+                    android:insetTop="8dp"
+                    android:insetRight="50dp"
+                    android:insetBottom="8dp"
+                    android:onClick="sendMessage"
+                    android:text="Snake" />
+
+                <Button
+                    android:id="@+id/hangmanButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:insetLeft="50dp"
+                    android:insetTop="8dp"
+                    android:insetRight="50dp"
+                    android:insetBottom="8dp"
+                    android:onClick="sendMessage"
+                    android:text="Hangman" />
+
+                <Button
+                    android:id="@+id/othergameButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:insetLeft="50dp"
+                    android:insetTop="8dp"
+                    android:insetRight="50dp"
+                    android:insetBottom="8dp"
+                    android:onClick="sendMessage"
+                    android:text="Other Game" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 

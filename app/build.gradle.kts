@@ -36,12 +36,18 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.activity:activity-compose:1.3.0-alpha07")
+    implementation(libs.androidx.ui.framework)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.gridlayout)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.ui.tooling.preview.android)
+    implementation(libs.androidx.constraintlayout.core)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
