@@ -1,11 +1,14 @@
 package com.holden.newgames
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.log
@@ -54,6 +57,7 @@ class HangmanGame : AppCompatActivity() {
         word = newWord()
         guesses.clear()
         updateAns()
+        updateHangmanImage()
     }
     fun newWord():String {
         var ran:Int = Random.nextInt(wordPool.size)
@@ -79,6 +83,7 @@ class HangmanGame : AppCompatActivity() {
     fun updateWrong() {
         var ansText = findViewById<TextView>(R.id.wrongText)
         ansText.text = ("wrong: " + wrong.toString())
+        updateHangmanImage()
     }
     fun updateWrongList(c:Char) {
         var ansText = findViewById<TextView>(R.id.wrongTextList)
@@ -88,6 +93,43 @@ class HangmanGame : AppCompatActivity() {
         else {
             ansText.setText(oldText.toString() + c)
         }
+    }
+    fun updateHangmanImage() {
+        var img = findViewById<ImageView>(R.id.hangmanImage)
+        when (wrong) {
+            0 -> {
+                img.setImageResource(R.drawable.h0);
+                img.setTag(R.drawable.h0);
+            }
+            1 -> {
+                img.setImageResource(R.drawable.h1);
+                img.setTag(R.drawable.h1);
+            }
+            2 -> {
+                img.setImageResource(R.drawable.h2);
+                img.setTag(R.drawable.h2);
+            }
+            3 -> {
+                img.setImageResource(R.drawable.h3);
+                img.setTag(R.drawable.h3);
+            }
+            4 -> {
+                img.setImageResource(R.drawable.h4);
+                img.setTag(R.drawable.h4);
+            }
+            5 -> {
+                img.setImageResource(R.drawable.h5);
+                img.setTag(R.drawable.h5);
+            }
+            else -> { // Note the block
+                img.setImageResource(R.drawable.h6);
+                img.setTag(R.drawable.h6);
+            }
+        }
+        fun restartGameEvent(view: View?) {
+            setupGame()
+        }
+
     }
 
     fun guess(c:Char) {
