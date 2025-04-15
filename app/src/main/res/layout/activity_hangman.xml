@@ -12,7 +12,7 @@
         android:layout_marginBottom="284dp"
         android:ems="8"
         android:inputType="text"
-        android:text="guess"
+        android:text=""
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,4 +40,17 @@
         android:text="wrong: 0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textColor="#ff0000"
+        android:id="@+id/wrongTextList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text=""
+        android:textSize="50px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
